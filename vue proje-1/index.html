@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <p> 33 e esitle</p>
+            <p>şuankideğer : {{ value }}</p>
+            <button @click="value+=5">Add+5</button>
+            <button @click="value+=1">Add+1</button>
+            <p>{{result}}</p>
+         
+        </div> 
+        
+      </div>
+      <!-- built files will be auto injected -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+            value : 0,
+            },
+            computed : {
+                result : function(){
+                    return this.value == 33 ? "Tamamlandı" : "Henüz Bitmedi!!"
+                    console.log(value);
+                }
+            },
+            watch : {
+                result : function(value){            
+                    setTimeout(function(){
+                        this.value = 0;
+                    }, 2000)
+                }
+            },
+
+        });
+
+    </script>
+     
+</body>
+</html>
